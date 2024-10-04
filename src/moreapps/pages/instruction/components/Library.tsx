@@ -1,4 +1,4 @@
-import CTA from "@/amaya/components/CTA";
+import CTA from "@/moreapps/components/CTA";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const Library = () => {
