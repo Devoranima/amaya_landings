@@ -1,4 +1,4 @@
-import Head from "../../components/Head";
+//import Head from "../../components/Head";
 import Hero from "../../components/Hero";
 import "../../App.css"
 import USP from "../../components/USP";
@@ -9,11 +9,12 @@ import AppGallery from "../../components/AppGallery";
 import Foot from "../../components/Foot";
 import Reviews from "../../components/Reviews";
 import JoinUs from "../../components/JoinUs";
+import React from "react";
 
 export default function App() {
   return (
     <div className="min-h-screen w-screen bg-[#f4f5ff] overflow-hidden">
-      <Head/>
+      {/*<Head/>*/}
       <Hero/>
       <USP/>
       <Offer/>
@@ -21,7 +22,7 @@ export default function App() {
       <Try/>
       <AppGallery/>
       <Reviews/>
-      <JoinUs></JoinUs>
+      <JoinUs/>
       <Foot/>
     </div>
   )

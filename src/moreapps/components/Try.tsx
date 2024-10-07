@@ -1,8 +1,7 @@
 import classNames from "classnames";
 import CTA from "./CTA";
 import BgFigure from "./BgFigure";
-import { useState } from "react";
-
+import React from "react";
 
 
 const MyButton = (props: MyComponentProps & {onClick: ()=>void}) => {
@@ -17,23 +16,19 @@ const MyButton = (props: MyComponentProps & {onClick: ()=>void}) => {
 }
 
 const Try = () => {
-  const [slide, setSlide] = useState(0);
-  const changeSlide = (index: number) => {
-    setSlide(index);
-  }
   return (
     <div className='bg-gradient-to-r -mt-40 pt-60 pb-40 relative'>
       <div className="container text-center flex flex-col items-center relative z-10">
         <h1 className="font-fut text-4xl md:text-6xl mb-4 drop-shadow-xl">Учебное путешествие, которое меняется вместе с вашим ребёнком</h1>
         <h2 className="text-2xl md:text-3xl mb-10">Нажмите на круги, чтобы узнать чему они научатся на каждом этапе</h2>
         <div className="relative flex flex-row bg-white text-accent border-white border-8 shadow-inner shadow-gray-300 rounded-3xl drop-shadow-xl text-nowrap text-center">
-          <MyButton onClick={()=>{changeSlide(0)}}>
+          <MyButton onClick={()=>{}}>
             2-3
           </MyButton>
-          <MyButton onClick={()=>{changeSlide(1)}}>
+          <MyButton onClick={()=>{}}>
             4-5
           </MyButton>
-          <MyButton onClick={()=>{changeSlide(2)}}>
+          <MyButton onClick={()=>{}}>
             6+
           </MyButton>
           {/*<div className={`absolute left-0 top-0 translate-x-[${100*slide}%] h-full w-1/3 bg-accent text-white rounded-[1rem] z-10 overflow-hidden text-nowrap transition-all`}>

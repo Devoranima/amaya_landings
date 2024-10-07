@@ -1,3 +1,4 @@
+import React from "react"
 
 export default function Foot() {
   return (
@@ -13,12 +14,12 @@ export default function Foot() {
       </div>
       <div className="mt-10 bg-gradient-to-r from-[#f87413] via-[#ffa13d] to-[#f87413] w-full z-10 relative">
         <div className='lg:hidden container mx-auto text-center py-8 text-xl'>
-        © 2024, Amaya+ I All rights reserved
+        © 2024, Amaya+ | All rights reserved
         </div>
         <div className="container flex-row justify-between items-stretch hidden lg:flex py-6 text-2xl">
           <div className="">
             <img src="amaya/Logo_inverse.webp" alt="" />
-            <div className="mt-2">© 2024, Amaya+ I All rights reserved</div>
+            <div className="mt-2">© 2024, Amaya+ | All rights reserved</div>
           </div>
           <div className="underline text-end flex flex-col justify-evenly *:block">
             <a href="" className="">

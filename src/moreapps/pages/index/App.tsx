@@ -9,6 +9,7 @@ import AppGallery from "../../components/AppGallery";
 import Foot from "../../components/Foot";
 import Reviews from "../../components/Reviews";
 import JoinUs from "../../components/JoinUs";
+import React from "react";
 
 export default function App() {
   return (

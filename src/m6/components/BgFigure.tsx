@@ -6,8 +6,8 @@ const BgFigure = () => {
       </g>
       <defs>
       <linearGradient id="paint0_linear_2001_2" x1="0" y1="0.718018" x2="168310" y2="0.718018" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F87413"/>
-      <stop offset="1" stop-color="#FFA13D"/>
+        <stop stop-color="#00c5eb"/>
+        <stop offset="1" stop-color="#00c5eb"/>
       </linearGradient>
       <clipPath id="clip0_2001_2">
       <rect width="1684" height="1933" fill="white"/>

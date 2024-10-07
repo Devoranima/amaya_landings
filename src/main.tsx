@@ -20,9 +20,9 @@ register();
 
 
 //? Входные файлы для страниц
-import App from './moreapps/pages/index/App'
+//import App from './moreapps/pages/index/App'
 //import App from './moreapps/pages/instruction/App'
-//import App from './m6/pages/index/App'
+import App from './m6/pages/index/App'
 //import App from './m6/pages/instruction/App'
 
 

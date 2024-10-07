@@ -1,100 +1,126 @@
 import React from 'react';
 import Header from '@components/Section/Header';
-import classNames from 'classnames';
-import CTA from './CTA';
 import { FaStar } from 'react-icons/fa6';
 import { BsFillPersonFill } from 'react-icons/bs';
-
-
-type T_App = {
-  image:{
-    mobile: string;
-    laptop: string;
-  };
-  title: string | JSX.Element;
-  subtitle: string | JSX.Element;
-  rating: number;
-  users: number;
-  callback?: ()=>{}
-} 
-
-const app:T_App = 
-{
-  image: {
-    mobile: "apps/mobile/Alphabet.webp",
-    laptop: "apps/laptop/Alphabet.webp"
-  },
-  title: <span>Весёлый Алфавит. <br /> Учим буквы весело! </span>,
-  subtitle: "Учим алфавит и учимся читать по слогам. Развивающие игры для детей: учим буквы, читаем слоги и слова, расширяем словарный запас. Играем с пользой!",
-  rating: 4.8,
-  users: 100000
-}
-
-const apps: T_App[] = [app, 
-  {title: <span>Весёлая Ферма: <br /> Учись и Играй!</span>,
-    subtitle: "В приложении 6 различных категорий: более 90 видов животных, насекомых, овощей и фруктов. Малыш познакомится с окружающим миром и выучит много новых слов!",
-    rating: 4.8,
-    users: 100000,
-    image: {
-      mobile: "apps/mobile/Farm.webp",
-      laptop: "apps/laptop/Farm.webp"
-    },
-  }, 
-  {title: <span>Мир Динозавров: <br /> Играй и Учись!</span>,
-    subtitle: <span>Веселые динозавры ждут любопытного малыша в гости! Отправляйся в новое увлекательное путешествие в мир динозавров вместе с другом - Енотиком! <br /> Играй, веселись и изучай особенности этих необычных существ! Собирай дино-пазлы и стань обладателем своего уникального парка динозавров!</span>,
-    rating: 4.8,
-    users: 100000,
-    image: {
-      mobile: "apps/mobile/Dino.webp",
-      laptop: "apps/laptop/Dino.webp"
-    },
-  }
-]
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const AppGallery = () => {
   return (
-    <div className='container flex flex-col items-center text-main mb-20'>
-      <Header>Выбирайте индивидуальный подход к интересам детей по разным предметам</Header>
-      {apps.map((e, index)=><App index={index} app={e} />)}
+    <div className=''>
+      <div className="container flex flex-col items-center text-main">
+        <App/>
+      </div>
 
-      <Header>Все приложения Amaya+</Header>
-      ...
-      <CTA>Попробовать</CTA>
+      <Header className="text-3xl md:text-5xl mt-10 text-slate-700">Наши активности</Header>
+
+      <div className="pointer-events-none mt-10">
+        <Slider index={1}/>
+        <div className="xl:hidden">
+          <Slider index={6} offset={100}/>
+        </div>
+      </div>
+
     </div>
   );
 };
 
-const App = ({index, app}: {index:number, app: T_App}) => {
-  const left = index % 2 == 0;
+const App = () => {
   return (
-    <div className={classNames("flex w-full text-main sm:p-4 mb-10 items-center", left? "flex-row" : "flex-row-reverse" )}>
-      <img src={app.image.mobile} className="w-1/3 lg:hidden"></img>
-      <img src={app.image.laptop} className="hidden w-1/2 lg:block p-4"></img>
-      <div className={classNames("flex flex-col px-2 sm:px-4 lg:items-center lg:text-center", left ? "items-start text-start" : "items-end text-end")}>
-        <h2 className='sm:text-4xl lg:text-5xl lg:mb-4 font-fut'>{app.title}</h2>
-        <h3 className='sm:text-2xl lg:text-3xl mb-4 lg:mb-8 w-full'>
-          {app.subtitle}
+    <div className="flex w-full text-main p-4 md:p-10 lg:p-20 items-center flex-row bg-white rounded-[3rem]">
+      <div className="flex flex-col items-center">
+        <img src="m6/index/shared/Icon.webp" className="" />
+        <h2 className='text-2xl sm:text-4xl lg:text-5xl font-fut mt-4 text-center'>Детские игры
+        </h2>
+      </div>
+      <div className="flex flex-col px-2 sm:px-4 lg:pl-20 items-start text-start">
+        <h3 className='sm:text-2xl lg:text-4xl w-full'>
+          Короткое описание приложения, о чём оно, для кого оно, чему научит и т.д.
         </h3>
-        <div className="flex flex-row mb-4 lg:mb-8 text-xl sm:text-4xl lg:text-6xl text-center">
-          <div className="flex flex-col mr-4 items-center">
+        <div className="w-full justify-around flex flex-row items-start text-center sm:text-2xl md:text-3xl mt-4 md:mt-10">
+          <div className="flex flex-col items-center">
             <div className="flex flex-row items-center justify-center font-bold">
-              <FaStar className='text-yellow-500' /> 
-              {app.rating}
+              <FaStar className='text-yellow-500' />
+              4.8
             </div>
             <span className='sm:text-xl lg:text-2xl'>App Store raiting</span>
           </div>
           <div className="flex flex-col items-center">
             <div className="flex flex-row items-center justify-center font-bold">
-              <BsFillPersonFill className='text-purple-500'/> {app.users}
+              <BsFillPersonFill className='text-purple-500' />
+              100.000
             </div>
             <span className='sm:text-xl lg:text-2xl'>Monthly active users
             </span>
           </div>
         </div>
-        <CTA className='px-10 text-xl'>Скачать</CTA>
+        <div className="mt-10 flex flex-row justify-start items-center w-full">
+            {/*<div className="aspect-square w-1/2 lg:w-[10%] bg-slate-500"></div>*/}
+            <a href="block">
+              <img src="AppStore.webp" alt="" className=''/>
+            </a>
+          </div>
       </div>
     </div>
   )
 }
 
 export default AppGallery;
+
+const getSlidesPerView = (breakpoint: string) => {
+  switch (breakpoint) {
+    case 'sm':
+      return 2;
+    case 'md':
+      return 3;
+    case 'lg':
+      return 4;
+    case 'xl':
+      return 5;
+    case '2xl':
+      return 6;
+    default:
+      return 4; // Default to 4 if no breakpoint matches
+  }
+};
+
+const Slider = ({ index, offset }: {index:number, offset?: number }) => {
+  const items:React.ReactNode[] = [];
+
+  for (let i = 1; i < 11; i++) {
+    items.push(
+      <SwiperSlide className="w-1/2 md:w-1/3 lg:w-1/4" key={`slide-${Math.random()}`}>
+        <img
+          src={`m6/index/shared/Icon${i}.webp`} alt=""
+          className="w-full"
+        />
+      </SwiperSlide>
+    );
+  }
+
+  return (
+    <Swiper
+      spaceBetween={10}
+      slidesPerView={2}
+      autoplay={{
+        delay: 1,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+        waitForTransition: true,
+      }}
+      speed={20000}
+      loop
+      breakpoints={{
+        640: { slidesPerView: getSlidesPerView('sm') },
+        768: { slidesPerView: getSlidesPerView('md') },
+        1024: { slidesPerView: getSlidesPerView('lg') },
+        1280: { slidesPerView: getSlidesPerView('xl') },
+        1536: { slidesPerView: getSlidesPerView('2xl') },
+      }}
+      slidesOffsetBefore={offset ?? 0}
+      className="my-2"
+      initialSlide={index}
+    >
+      {items}
+    </Swiper>
+  )
+}

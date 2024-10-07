@@ -2,7 +2,8 @@ import classNames from "classnames";
 import Header from "@components/Section/Header";
 import Section from "@components/Section/Section";
 import Body from "@components/Section/Body";
-
+import React from "react";
+import CTA from "./CTA";
 type T_Card = {
   title: string,
   subtitle: string | JSX.Element,
@@ -60,6 +61,7 @@ export default function USP() {
           </div>
         </div>
       </Body>
+      <CTA className="mt-10 lg:0 lg:-translate-y-full">Try now</CTA>
     </Section>
   )
 }

@@ -3,6 +3,7 @@ import Header from '@components/Section/Header';
 import Body from '@components/Section/Body';
 import BgFigure from './BgFigure';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react';
 
 const Reviews = () => {
   return (

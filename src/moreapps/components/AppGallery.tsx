@@ -4,6 +4,7 @@ import CTA from './CTA';
 import { FaStar } from 'react-icons/fa6';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react';
 
 type T_App = {
   image: {
@@ -71,7 +72,7 @@ const AppGallery = () => {
           <Slider />
         </div>
       </div>
-      
+
       <CTA className='max-w-fit mx-auto mt-10'>Попробовать</CTA>
     </div>
   );
@@ -131,7 +132,7 @@ const getSlidesPerView = (breakpoint: string) => {
 };
 
 const Slider = ({ offset }: { offset?: number }) => {
-  const items = [];
+  const items:React.ReactNode[] = [];
 
   for (let i = 1; i < 10; i++) {
     items.push(

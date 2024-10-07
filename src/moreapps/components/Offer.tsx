@@ -3,7 +3,7 @@ import Section from '@components/Section/Section';
 import Header from '@components/Section/Header';
 import Body from '@components/Section/Body';
 import { FaCheck } from "react-icons/fa6";
-
+import React from "react";
 
 const bulltetpoints = [
   "Неограниченный доступ к приложениям Amaya+",
