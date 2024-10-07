@@ -45,7 +45,7 @@ export default function  Offer
             </div>
           </div>
         </div>
-        <CTA className="shadow-2xl mt-20 w-full md:w-max">
+        <CTA className="shadow-2xl mt-20 w-min md:w-max">
             Начать пробный период
         </CTA>
         <h4 className="mt-10 text-xl text-gray-700">First 3 days free, then $9.99 per month.</h4>

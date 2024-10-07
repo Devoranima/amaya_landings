@@ -21,7 +21,7 @@ export default function App() {
       <Try/>
       <AppGallery/>
       <Reviews/>
-      <JoinUs></JoinUs>
+      <JoinUs/>
       <Foot/>
     </div>
   )

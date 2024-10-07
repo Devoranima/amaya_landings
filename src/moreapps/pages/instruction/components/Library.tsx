@@ -1,3 +1,4 @@
+import React from "react";
 import CTA from "@/moreapps/components/CTA";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -49,7 +50,7 @@ const getSlidesPerView = (breakpoint: string) => {
 };
 
 const Slider = ({index, offset}:{index: number, offset?: number}) => {
-  const items = [];
+  const items: React.ReactNode[] = [];
 
   for (let i = 1; i < 11; i++) {
     items.push(
