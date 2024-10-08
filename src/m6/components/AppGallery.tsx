@@ -1,64 +1,118 @@
 import React from 'react';
 import Header from '@components/Section/Header';
-import { FaStar } from 'react-icons/fa6';
+import { FaStar, FaStarHalfStroke } from 'react-icons/fa6';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Section from '@/components/Section/Section';
 
 const AppGallery = () => {
   return (
-    <div className=''>
+    <Section className=''>
       <div className="container flex flex-col items-center text-main">
-        <App/>
+        <App />
       </div>
 
-      <Header className="text-3xl md:text-5xl mt-10 text-slate-700">Наши активности</Header>
+      <Header className="mt-10 text-slate-700">Наши активности</Header>
 
-      <div className="pointer-events-none mt-10">
-        <Slider index={1}/>
+      <div className="pointer-events-none mt-10 max-w-full">
+        <Slider index={1} />
         <div className="xl:hidden">
-          <Slider index={6} offset={100}/>
+          <Slider index={6} offset={100} />
         </div>
       </div>
 
-    </div>
+    </Section>
   );
 };
 
 const App = () => {
   return (
-    <div className="flex w-full text-main p-4 md:p-10 lg:p-20 items-center flex-row bg-white rounded-[3rem]">
-      <div className="flex flex-col items-center">
+    <div className="">
+      <div className="hidden lg:block">
+        <App_Tablet />
+      </div>
+      <div className="lg:hidden">
+        <App_Mobile />
+      </div>
+    </div>
+  )
+}
+
+const App_Tablet = () => {
+  return (
+    <div className="flex items-stretch flex-row w-full text-main p-10 bg-white rounded-3xl">
+      <div className="flex flex-col items-center max-w-[40%]">
         <img src="m6/index/shared/Icon.webp" className="" />
-        <h2 className='text-2xl sm:text-4xl lg:text-5xl font-fut mt-4 text-center'>Детские игры
+        <h2 className='text-3xl font-fut mt-4'>Детские игры
         </h2>
       </div>
-      <div className="flex flex-col px-2 sm:px-4 lg:pl-20 items-start text-start">
-        <h3 className='sm:text-2xl lg:text-4xl w-full'>
+      <div className="flex flex-col justify-around items-start text-start  ml-4"> 
+        <h3 className='max-w-[90%] text-2xl'>
           Короткое описание приложения, о чём оно, для кого оно, чему научит и т.д.
         </h3>
-        <div className="w-full justify-around flex flex-row items-start text-center sm:text-2xl md:text-3xl mt-4 md:mt-10">
+        <div className="w-full justify-around flex flex-row items-start text-center text-2xl mt-2">
           <div className="flex flex-col items-center">
-            <div className="flex flex-row items-center justify-center font-bold">
+            <div className="flex flex-row items-center justify-center font-bold text-3xl">
               <FaStar className='text-yellow-500' />
-              4.8
+              <div className="ml-2">4.8</div>
             </div>
-            <span className='sm:text-xl lg:text-2xl'>App Store raiting</span>
+            <span className=''>App Store raiting</span>
           </div>
           <div className="flex flex-col items-center">
-            <div className="flex flex-row items-center justify-center font-bold">
+            <div className="flex flex-row items-center justify-center font-bold text-3xl">
               <BsFillPersonFill className='text-purple-500' />
-              100.000
+              <div className="ml-2">100.000</div>
             </div>
-            <span className='sm:text-xl lg:text-2xl'>Monthly active users
+            <span className=''>Monthly active users
             </span>
           </div>
         </div>
-        <div className="mt-10 flex flex-row justify-start items-center w-full">
-            {/*<div className="aspect-square w-1/2 lg:w-[10%] bg-slate-500"></div>*/}
-            <a href="block">
-              <img src="AppStore.webp" alt="" className=''/>
-            </a>
+        <div className="mt-4 flex flex-row justify-between items-center">
+          <div className="aspect-square w-16 bg-slate-500">
+            QR Spacer
           </div>
+          <a href="" className='block w-60 ml-8'>
+            <img src="AppStore.webp" alt="" className='' />
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const App_Mobile = () => {
+  return (
+    <div className="flex flex-row items-stretch w-full text-main p-4 bg-white rounded-3xl">
+      <div className="flex flex-col items-center max-w-[40%]">
+        <img src="m6/index/shared/Icon.webp" className="" />
+        <a href="block">
+          <img src="AppStore.webp" alt="" className='mt-4' />
+        </a>
+      </div>
+      <div className="flex flex-col justify-between ml-4 items-start text-start">
+        <h2 className='text-2xl font-fut text-center'>Детские игры</h2>
+        <h3 className=''>
+          Короткое описание приложения, о чём оно, для кого оно, чему научит и т.д.
+        </h3>
+
+        <div className="flex flex-col items-start mt-2">
+          <div className="flex flex-row items-center text-lg">
+            {(new Array(4)).fill(0).map((_e)=>
+              <FaStar className='text-yellow-500' />
+            )}
+            <FaStarHalfStroke className='text-yellow-500'/>
+            <div className="ml-1 font-bold">4.8</div>
+          </div>
+          <div className=''>App Store raiting</div>
+        </div>
+        <div className="flex flex-col items-start mt-2">
+          <div className="flex flex-row items-center text-lg">
+            <BsFillPersonFill className='text-purple-500' />
+            <div className="ml-1 font-bold">100.000</div>
+          </div>
+          <div className=''>Monthly active users</div>
+        </div>
+
       </div>
     </div>
   )
@@ -83,8 +137,8 @@ const getSlidesPerView = (breakpoint: string) => {
   }
 };
 
-const Slider = ({ index, offset }: {index:number, offset?: number }) => {
-  const items:React.ReactNode[] = [];
+const Slider = ({ index, offset }: { index: number, offset?: number }) => {
+  const items: React.ReactNode[] = [];
 
   for (let i = 1; i < 11; i++) {
     items.push(
@@ -117,7 +171,7 @@ const Slider = ({ index, offset }: {index:number, offset?: number }) => {
         1536: { slidesPerView: getSlidesPerView('2xl') },
       }}
       slidesOffsetBefore={offset ?? 0}
-      className="my-2"
+      className="my-2 w-full"
       initialSlide={index}
     >
       {items}

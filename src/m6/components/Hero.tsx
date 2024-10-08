@@ -5,16 +5,19 @@ export default function   Hero() {
   return (
     <div className='relative bg-blu'>
       <div className="container relative z-10 w-full pt-10">
-        <div className="flex flex-col items-center text-center lg:text-left lg:items-start">
-          <div className="lg:ml-6 font-fut w-full">
-            <h1 className='leading-[0.9em] text-5xl md:text-6xl my-6 w-full lg:w-1/2 2xl:w-1/3'>Добро пожаловать в <br /> <span className='lext-6xl md:text-7xl text-yellow-300'>Amaya Kids World</span></h1>
-            <h2 className='leading-tight text-2xl md:text-4xl 2xl:text-5xl mb-4 lg:mb-12 font-sans lg:w-1/2 2xl:w-1/3'>A collection of more than <b>500 fun and educational games and activities</b>.</h2>
-            <h2 className='leading-tight text-2xl md:text-3xl 2xl:text-4xl mb-4 lg:mb-12 font-sans lg:w-1/2 2xl:w-1/3'>Играйте, учитесь и получайте массу веселья в более <b>2000+</b> активностей <span className='text-yellow-300'>в одном приложении!</span></h2>
+        <div className="flex flex-col items-center text-center lg:text-left lg:items-start leading-tight">
+          <div className="w-full lg:pl-6 lg:w-1/2">
+            <h1 className= 'text-3xl my-6 font-fut'>Добро пожаловать в <br /> <span className='text-4xl text-yellow-300'>Amaya Kids World</span></h1>
+
+            <h2 className='text-xl lg:text-2xl'>A collection of more than <b>500 fun and educational games and activities</b>.</h2>
+            
+            <h2 className='hidden lg:block text-2xl mt-10'>Играйте, учитесь и получайте массу веселья в более <b>2000+</b> активностей <span className='text-yellow-300'>в одном приложении!</span></h2>
           </div>
 
           <img src="m6/index/shared/Kids.webp" alt="" className='w-full lg:block lg:w-1/2 static lg:absolute right-0 top-1/2 lg:-translate-y-1/2 mb-8' />
 
-          <CTA className=''>
+          <h2 className='text-xl lg:hidden'>Играйте, учитесь и получайте массу веселья в более <b>2000+</b> активностей <span className='text-yellow-300'>в одном приложении!</span></h2>
+          <CTA className='lg:ml-6 mt-10 lg:mt-20 lg:max-w-min px-16' customPaddingX>
             Попробовать
           </CTA>
         </div>

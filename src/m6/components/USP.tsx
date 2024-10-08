@@ -42,26 +42,33 @@ const cards: T_Card[] = [
 export default function USP() {
 
   return (
-    <Section className="sm:px-4 bg-[#f4f5ff]">
-      <Header className="text-4xl md:text-6xl">Играй и веселись вместе с <span className="text-5xl md:text-7xl">Amaya Kids World</span></Header>
+    <Section className="bg-[#f4f5ff] mt-4">
+      <Header className="px-4 text-2xl lg:text-4xl">Играй и веселись вместе с <br/><span className="text-3 xl lg:text-5xl">Amaya Kids World</span></Header>
       <Body className="mt-10">
-        <div className="lg:flex flex-row items-end">
+        <div className="lg:flex flex-row items-stretch">
           {cards.slice(0, 3).map((e, index)=>Card(index, e))}
         </div>
-        <div className="lg:flex flex-row-reverse w-full">
+        <div className="lg:flex flex-row-reverse w-full *:basis-1/3 relative items-stretch">
           {cards.slice(3, 6).map((e, index)=>Card(index+1, e))}
-          <div className="w-full lg:min-w-1/3 relative">
-            <img src="m6/index/shared/iphone.webp" alt="" className="w-1/2 mx-auto z-10 relative lg:-rotate-6 lg:w-full"/>
-            <img src="m6/index/shared/spot.svg" alt="" className="absolute w-full lg:min-w-[160%] -translate-x-1/2 lg:left-1/3 left-1/2 top-1/2 -translate-y-1/2 z-0" />
-            <div className="absolute w-2/5 lg:w-1/2 top-6 md:top-14 xl:top-16 right-0 lg:right-4 z-20 text-accent font-fut sm:text-3xl md:text-2xl xl:text-3xl  rotate-12 lg:rotate-0 text-center flex flex-col items-center">
-              Посмотрите видео об 
-              <img src="m6/Logo.webp" alt="" className="w-2/3 l:w-full mx-auto"/>
+
+          <CTA className="lg:hidden mt-10 max-w-fit mx-auto">Try now</CTA>
+
+          <div className="relative mt-10 lg:mt-0 w-full lg:w-1/3 z-0 lg:absolute left-0 top-0">
+            <img src="m6/index/shared/iphone.webp" alt="" className="w-3/5 mx-auto z-10 relative lg:-rotate-6 lg:w-full"/>
+            <img src="m6/index/shared/spot.svg" alt="" className="absolute min-w-[140%] -translate-x-1/2 lg:left-1/3 left-1/2 top-1/2 -translate-y-1/2 z-0" />
+            <div className="absolute w-1/2 top-0 right-0 z-10">
+              <div className="relative">
+                <div className="max-w-full absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 z-20 rotate-12 text-accent font-fut text-center text-xl">
+                  Посмотрите видео об<br/><span className="text-red-500">Amaya Kids</span>
+                </div>
+                <img src="m6/index/shared/bubble.svg" alt="" className="w-full"/> 
+              </div>
             </div>
-            <img src="m6/index/shared/bubble.svg" alt="" className="absolute w-2/5 top-0 right-0 z-10 lg:w-3/4 2xl:w-2/3 lg:top-10 xl:top-8 lg:-right-6 lg:-rotate-6"/> 
           </div>
         </div>
+        
+        <CTA className="hidden lg:block mt-40 max-w-fit mx-auto px-20" customPaddingX>Try now</CTA>
       </Body>
-      <CTA className="mt-10 lg:0 lg:-translate-y-full">Try now</CTA>
 
     </Section>
   )
@@ -73,12 +80,12 @@ function Card(index: number, card: T_Card){
   const left = index % 2 == 0;
   return (
     <div className={
-      classNames("mb-12 px-1 lg:px-6 xl:px-10 w-full flex items-center justify-between lg:flex-col lg:justify-start", left ? "flex-row" : "flex-row-reverse")
+      classNames("mb-12 px-1 lg:px-6 xl:px-10 w-full flex items-center justify-around lg:flex-col", left ? "flex-row" : "flex-row-reverse")
     }>
-      <img src={image} alt="" className="w-2/5 lg:w-auto lg:mb-16"/>
-      <div className={classNames("w-1/2 lg:w-auto lg:text-center ", left ? "text-left" : "text-right")}>
-        <h4 className="text-2xl sm:text-4xl mb-4">{title}</h4>
-        <h6 className="font-sans sm:text-2xl text-wrap">{subtitle}</h6>
+      <img src={image} alt="" className="w-1/2 px-4 lg:w-auto"/>
+      <div className={classNames("w-1/2 lg:mt-8 leading-tight lg:w-auto lg:text-center ", left ? "text-left" : "text-right")}>
+        <h4 className="font-fut text-xl lg:text-2xl leading-6">{title}</h4>
+        <h6 className="mt-2 lg:text-xl">{subtitle}</h6>
       </div>
     </div>
   )

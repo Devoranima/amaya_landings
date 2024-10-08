@@ -2,7 +2,7 @@ import classNames from "classnames";
 export default function Section( props:MyComponentProps) {
   return (
     <div 
-      className={classNames("text-main font-fut flex flex-col items-center relative", props.className)}
+      className={classNames("text-main flex flex-col items-center relative", props.className)}
     >
       {props.children}
     </div>

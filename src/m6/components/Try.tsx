@@ -2,6 +2,9 @@
 import classNames from "classnames";
 import CTA from "./CTA";
 import BgFigure from "./BgFigure";
+import Header from "@/components/Section/Header";
+import Section from "@/components/Section/Section";
+import Body from "@/components/Section/Body";
 
 
 const MyButton = (props: MyComponentProps & {onClick: ()=>void}) => {
@@ -17,11 +20,11 @@ const MyButton = (props: MyComponentProps & {onClick: ()=>void}) => {
 
 const Try = () => {
   return (
-    <div className='bg-gradient-to-r -mt-40 pt-60 pb-40 relative'>
-      <div className="container text-center flex flex-col items-center relative z-10">
-        <h1 className="font-fut text-4xl md:text-6xl mb-4 drop-shadow-xl">Учебное путешествие, которое меняется вместе с вашим ребёнком</h1>
-        <h2 className="text-2xl md:text-3xl mb-10">Нажмите на круги, чтобы узнать чему они научатся на каждом этапе</h2>
-        <div className="relative flex flex-row bg-white text-accent border-white border-8 shadow-inner shadow-gray-300 rounded-3xl drop-shadow-xl text-nowrap text-center">
+    <Section className='-mt-40 pt-60 pb-40 relative'>
+      <Body className="z-10 container text-center flex flex-col items-center relative text-white">
+        <Header className="text-2xl lg:text-4xl drop-shadow-2xl text-shadow">Учебное путешествие, которое меняется вместе с вашим ребёнком</Header>
+        <div className="text-lg lg:text-3xl mt-10">Нажмите на круги, чтобы узнать чему они научатся на каждом этапе</div>
+        <div className="mt-8 relative flex flex-row bg-white text-blu border-white border-8 shadow-inner shadow-gray-300 rounded-3xl drop-shadow-xl text-nowrap text-center">
           <MyButton onClick={()=>{}}>
             2-3
           </MyButton>
@@ -31,19 +34,6 @@ const Try = () => {
           <MyButton onClick={()=>{}}>
             6+
           </MyButton>
-          {/*<div className={`absolute left-0 top-0 translate-x-[${100*slide}%] h-full w-1/3 bg-accent text-white rounded-[1rem] z-10 overflow-hidden text-nowrap transition-all`}>
-            <div className={`-translate-x-${slide==1?"full":`[${100*slide}%]`} transition-all flex flex-row`}>
-              <MyButton onClick={()=>{}}>
-                2-3
-              </MyButton>
-              <MyButton onClick={()=>{}}>
-                4-5
-              </MyButton>
-              <MyButton onClick={()=>{}}>
-                6+
-              </MyButton>
-            </div>
-          </div>*/}
           <div className="absolute left-1/3 top-0 h-full w-1/3 bg-yellow-400 text-white rounded-[1rem] z-10 shadow-lg">
             <MyButton onClick={()=>{}}>
                 4-5
@@ -54,10 +44,10 @@ const Try = () => {
           <img src="amaya/index/mobile/iphone.webp" alt="" className="lg:hidden"/>
           <img src="amaya/index/tablet/ipad.webp" alt="" className="hidden lg:block"/>
         </div>
-        <CTA className="mt-20 w-min md:w-max">Подобрать игры</CTA>
-      </div>
+        <CTA className="mt-10 w-min md:w-max">Подобрать <br/> игры</CTA>
+      </Body>
       <BgFigure/>
-    </div>
+    </Section>
   );
 };
 
