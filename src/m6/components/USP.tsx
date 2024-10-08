@@ -43,7 +43,7 @@ export default function USP() {
 
   return (
     <Section className="bg-[#f4f5ff] mt-4">
-      <Header className="px-4 text-2xl lg:text-4xl">Играй и веселись вместе с <br/><span className="text-3 xl lg:text-5xl">Amaya Kids World</span></Header>
+      <Header className="px-4 text-2xl lg:text-4xl">Играй и веселись вместе с <br/><span className="text-3xl lg:text-5xl">Amaya Kids World</span></Header>
       <Body className="mt-10">
         <div className="lg:flex flex-row items-stretch">
           {cards.slice(0, 3).map((e, index)=>Card(index, e))}

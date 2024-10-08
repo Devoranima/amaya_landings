@@ -3,7 +3,7 @@ import Section from '@components/Section/Section';
 import Header from '@components/Section/Header';
 import Body from '@components/Section/Body';
 import { FaCheck } from "react-icons/fa6";
-
+import React from "react";
 
 
 const bulltetpoints = [
@@ -17,7 +17,7 @@ export default function  Offer
 () {
   return (
     <Section className="mt-20">
-      <Header className="text-2xl lg:text-4xl">Уже готовы попробовать?</Header>
+      <Header>Уже готовы попробовать?</Header>
       <Body className="mt-10 flex flex-col items-center">
         <div className="font-fut mx-2">
           {bulltetpoints.map(e=>listElement(e))}

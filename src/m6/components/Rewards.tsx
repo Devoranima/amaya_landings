@@ -1,3 +1,5 @@
+import React from "react";
+
 const Rewards = () => {
   return (
     <div className="w-ful mt-20 relative z-20">

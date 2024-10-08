@@ -5,7 +5,7 @@ import BgFigure from "./BgFigure";
 import Header from "@/components/Section/Header";
 import Section from "@/components/Section/Section";
 import Body from "@/components/Section/Body";
-
+import React from "react";
 
 const MyButton = (props: MyComponentProps & {onClick: ()=>void}) => {
   return(
@@ -22,7 +22,7 @@ const Try = () => {
   return (
     <Section className='-mt-40 pt-60 pb-40 relative'>
       <Body className="z-10 container text-center flex flex-col items-center relative text-white">
-        <Header className="text-2xl lg:text-4xl drop-shadow-2xl text-shadow">Учебное путешествие, которое меняется вместе с вашим ребёнком</Header>
+        <Header className="text-2xl lg:text-4xl drop-shadow-2xl">Учебное путешествие, которое меняется вместе с вашим ребёнком</Header>
         <div className="text-lg lg:text-3xl mt-10">Нажмите на круги, чтобы узнать чему они научатся на каждом этапе</div>
         <div className="mt-8 relative flex flex-row bg-white text-blu border-white border-8 shadow-inner shadow-gray-300 rounded-3xl drop-shadow-xl text-nowrap text-center">
           <MyButton onClick={()=>{}}>

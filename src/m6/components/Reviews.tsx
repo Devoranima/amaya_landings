@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import CTA from './CTA';
-
+import React from 'react';
 
 const Reviews = () => {
   return (

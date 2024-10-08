@@ -2,12 +2,12 @@ import Section from '@components/Section/Section';
 import Header from '@components/Section/Header';
 import Body from '@components/Section/Body';
 import CTA from './CTA';
-
+import React from 'react';
 
 const JoinUs = () => {
   return (
     <Section className='bg-white pb-20 mb-0'>
-      <Header className='text-4xl md:text-6xl '>
+      <Header className=''>
         Присоединяйтесь к Amaya Kids World!
       </Header>
       <Body className='mt-10 relative'>

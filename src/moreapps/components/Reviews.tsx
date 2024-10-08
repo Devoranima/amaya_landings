@@ -8,9 +8,9 @@ import React from 'react';
 const Reviews = () => {
   return (
     <div className="relative">
-      <Section className="pt-40 z-10">
+      <Section className="pt-10 z-10">
         <Body className='z-10'>
-          <Header className='text-white text-4xl md:text-6xl mt-20'>Более 3 000 000 счастливых родителей по всему миру</Header>
+          <Header className='text-white mt-20'>Более 3 000 000 счастливых родителей по всему миру</Header>
         </Body>
       </Section>
 

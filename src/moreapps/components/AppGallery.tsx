@@ -5,6 +5,7 @@ import { FaStar } from 'react-icons/fa6';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import React from 'react';
+import Section from '@/components/Section/Section';
 
 type T_App = {
   image: {
@@ -43,7 +44,8 @@ const apps: T_App[] = [app,
   },
   {
     title: <span>Мир Динозавров: <br /> Играй и Учись!</span>,
-    subtitle: <span>Веселые динозавры ждут любопытного малыша в гости! Отправляйся в новое увлекательное путешествие в мир динозавров вместе с другом - Енотиком! <br /> Играй, веселись и изучай особенности этих необычных существ! Собирай дино-пазлы и стань обладателем своего уникального парка динозавров!</span>,
+    subtitle: <div>Веселые динозавры ждут любопытного малыша в гости! Отправляйся в новое увлекательное путешествие в мир динозавров вместе с другом - Енотиком!
+      <div className="hidden lg:block">Играй, веселись и изучай особенности этих необычных существ! Собирай дино-пазлы и стань обладателем своего уникального парка динозавров!</div></div>,
     rating: 4.8,
     users: 100000,
     image: {
@@ -55,15 +57,14 @@ const apps: T_App[] = [app,
 
 const AppGallery = () => {
   return (
-    <div className="">
-      <div className='container flex flex-col items-center text-main mb-10'>
-        <Header className="text-4xl md:text-6xl mb-16 mt-20">Выбирайте индивидуальный подход к интересам детей по разным предметам</Header>
+    <Section className="">
+      <Header className="mt-20">Выбирайте индивидуальный подход к интересам детей по разным предметам</Header>
+      <div className='container flex flex-col items-center text-main mt-10'>
         {apps.map((e, index) => <App index={index} app={e} />)}
-
-        <Header className="text-3xl md:text-5xl mt-10">Все приложения Amaya+</Header>
       </div>
-      
-      <div className="pointer-events-none">
+
+      <Header className="mt-10">Все приложения Amaya+</Header>      
+      <div className="pointer-events-none max-w-full mt-4">
         <Slider />
         <div className="xl:hidden">
           <Slider offset={100}/>
@@ -73,39 +74,40 @@ const AppGallery = () => {
         </div>
       </div>
 
-      <CTA className='max-w-fit mx-auto mt-10'>Попробовать</CTA>
-    </div>
+      <CTA className='max-w-fit mx-auto mt-10'>Попробовать</CTA> 
+    </Section>
   );
 };
 
 const App = ({ index, app }: { index: number, app: T_App }) => {
   const left = index % 2 == 0;
   return (
-    <div className={classNames("flex w-full text-main sm:p-4 mb-10 items-center", left ? "flex-row" : "flex-row-reverse")}>
-      <img src={app.image.mobile} className="w-2/5 lg:hidden"></img>
-      <img src={app.image.tablet} className="hidden w-1/2 lg:block p-4"></img>
-      <div className={classNames("flex flex-col px-2 sm:px-4 items-center lg:text-center", left ? "items-start text-start" : "items-end text-end")}>
-        <h2 className='w-full text-2xl sm:text-4xl lg:text-5xl lg:mb-4 font-fut'>{app.title}</h2>
-        <h3 className='mt-4 sm:text-2xl lg:text-3xl w-full'>
+    <div className={classNames("flex w-full text-main items-center p-4 lg:p-10 mt-10", left ? "flex-row" : "flex-row-reverse")}>
+      <img src={app.image.mobile} className="lg:hidden max-w-[30%]"></img>
+      <img src={app.image.tablet} className="hidden lg:block max-w-[40%]"></img>
+
+      <div className={classNames("flex flex-col justify-around lg:text-center lg:items-center", left ? "items-start text-start ml-4" : "items-end text-end mr-4")}>
+        <h2 className='text-2xl lg:text-3xl font-fut'>{app.title}</h2>
+        <h3 className='lg:text-2xl max-w-[90%]'>
           {app.subtitle}
         </h3>
-        <div className="w-full justify-around flex flex-row items-start text-center sm:text-2xl md:text-3xl mt-4 md:mt-10">
+        <div className="w-full justify-around flex flex-row items-start text-center text-sm lg:text-2xl mt-2">
           <div className="flex flex-col items-center">
-            <div className="flex flex-row items-center justify-center font-bold">
+            <div className="flex flex-row items-center justify-center font-bold text-xl">
               <FaStar className='text-yellow-500' />
               {app.rating}
             </div>
-            <span className='sm:text-xl lg:text-2xl'>App Store raiting</span>
+            <span className=''>App Store raiting</span>
           </div>
           <div className="flex flex-col items-center">
-            <div className="flex flex-row items-center justify-center font-bold">
+            <div className="flex flex-row items-center justify-center font-bold text-xl">
               <BsFillPersonFill className='text-purple-500' /> {app.users}
             </div>
-            <span className='sm:text-xl lg:text-2xl'>Monthly active users
+            <span className=''>Monthly active users
             </span>
           </div>
         </div>
-        <CTA className='mt-4 md:mt-10 px-10 text-xl md:text-4xl'>Скачать</CTA>
+        <CTA customPaddingX className='mt-4 lg:mt-10 px-14 text-xl lg:text-2xl'>Попробовать</CTA>
       </div>
     </div>
   )
@@ -165,7 +167,7 @@ const Slider = ({ offset }: { offset?: number }) => {
         1536: { slidesPerView: getSlidesPerView('2xl') },
       }}
       slidesOffsetBefore={offset ?? 0}
-      className="my-2"
+      className="my-2 w-full"
     >
       {items}
     </Swiper>
