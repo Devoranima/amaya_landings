@@ -32,7 +32,7 @@ const cards: T_Card[] = [
     image: "m6/index/shared/Card4.webp"
   },
   {
-    title: "Все приложения Amaya+ в одном месте",
+    title: "Все приложения Amaya Kids World в одном месте",
     subtitle: "Больше не придётся искать новые приложения – просто зайдите в Библиотеку и играйте!",
     image: "m6/index/shared/Card5.webp"
   },
